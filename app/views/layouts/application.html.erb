@@ -18,10 +18,11 @@
         <div id="user_nav">
             <%= link_to "Home", root_path %> |
             <%= link_to 'Ask Question', new_question_path %> |
-            <%= link_to "All Questions", root_path, class: "question"%> |
-            <%= link_to "User's Questions", questions_path %> |
-            <%= link_to "User's Answers", answers_path %> |
-
+            <%= link_to "All Questions", root_path, class: "question" %> |
+            <%= link_to "Your Questions", questions_path %> |
+            <%= link_to "Your given Answers", answers_path %> |
+            <%= link_to "Topics followed", follow_topic_path %> |
+            <%= link_to "User's following", following_path %> |
 
             <% if user_signed_in? %>
             <%= current_user.email %> |

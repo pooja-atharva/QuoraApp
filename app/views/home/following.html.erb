@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<h1>List of users the user follows</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Email</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <% @users.each do |user| %>
+        <tr>
+            <td><%= user.email %>
+                <%= link_to "follow user", follows_path(id: user.id, key: "user" ),class: "follow_user", method: :post %>
+            </td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>

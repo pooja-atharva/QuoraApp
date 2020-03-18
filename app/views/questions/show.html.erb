@@ -8,8 +8,15 @@
 <p>
     <strong>User:</strong>
     <%= @question.user.email %>
+    <%= link_to "follow user", follows_path(id: @question.user.id, key: "user" ),class: "follow_user", method: :post %>
 </p>
 
+<td colspan="3">
+    <% @question.topics.each do |topic| %>
+    <%= topic.name %>
+    <%= link_to "follow topic",  follows_path(id: topic.id, key: "topic" ) ,class: "follow_topic", method: :post %></br>
+    <% end %>
+</td>
 <p>
     <strong>Answers:</strong>
 </p>
@@ -35,6 +42,6 @@
         <% end %>
     </table>
     <% else %>
-    No Answers yet
+    <p class="answer">No Answers yet</p>
     <% end %>
 </p>
