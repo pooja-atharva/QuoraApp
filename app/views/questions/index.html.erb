@@ -18,13 +18,13 @@
                 <%= question.user.email %>
             </td>
             <td>
-                <%= link_to "follow user", "#" ,class: "follow_user" %>
+                <%= link_to "follow user", "#" ,class:"follow_user" %>
             </td>
 
             <td colspan="3">
                 <% question.topics.each do |topic| %>
                 <%= topic.name %>
-                <%= link_to "follow topic", "#" ,class: "follow_topic" %></br>
+                <%= link_to "follow topic", "#" ,class:"follow_topic" %></br>
                 <% end %>
             </td>
 

@@ -14,15 +14,23 @@
     <h1>Quora App</h1>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <div id="user_nav">
-        <% if user_signed_in? %>
-        Signed in as <%= current_user.email %>. Not you?
-        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-        <% else %>
-        <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
-        <% end %>
-    </div>
+    <h3>
+        <div id="user_nav">
+            <%= link_to "Home", root_path %> |
+            <%= link_to 'Ask Question', new_question_path %> |
+            <%= link_to "All Questions", root_path, class: "question"%> |
+            <%= link_to "User's Questions", questions_path %> |
+            <%= link_to "User's Answers", answers_path %> |
 
+
+            <% if user_signed_in? %>
+            <%= current_user.email %> |
+            <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+            <% else %>
+            <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "sign in", new_user_session_path %>
+            <% end %>
+        </div>
+    </h3>
     <%= yield %>
 </body>
 
